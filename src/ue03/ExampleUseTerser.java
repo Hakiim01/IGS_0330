@@ -13,10 +13,8 @@ import ca.uhn.hl7v2.util.Terser;
 
 /**
  * Example code for using the {@link Terser}
- *
  */
-public class ExampleUseTerser
-{
+public class ExampleUseTerser {
 
     private static Logger logger = Logger.getLogger(ExampleUseTerser.class);
 
@@ -37,14 +35,41 @@ public class ExampleUseTerser
                 + "GT1||0222PL|NOTREAL^BOB^B||STREET^OTHER STREET^CITY^ST^77787|(444)999-3333|(222)777-5555||||MO|111-33-5555||||NOTREAL GILL N|STREET^OTHER STREET^CITY^ST^99999|(111)222-3333\r"
                 + "IN1||022254P|4558PD|BLUE CROSS|STREET^OTHER STREET^CITY^ST^00990||(333)333-6666||221K|LENIX|||19980515|19990515|||PATIENT01 TEST D||||||||||||||||||02LL|022LP554";
 
-        /*
-         * ######################################################
-         * TODO: Use HAPI
-         * to parse the message from above - Extract MessageType and
-         * TriggerEvent and print them console - Extract Patient FamilyName and
-         * GivenName and print them to console
-         * #####################################################
-         */
+        // get Hapi Context
+        HapiContext context = new DefaultHapiContext();
+        Parser p = context.getGenericParser();
+        Message hm = p.parse(msg);
+
+        //declare terser
+        Terser terser = new Terser(hm);
+
+        //load sending application
+        String sendingApplication = terser.get("/.MSH-3-1");
+        logger.info(sendingApplication);
+
+        //Loading of the second allergy
+        String secondAllergyType = terser.get("/AL1(1)-3-2");
+        logger.info(secondAllergyType);
+
+        //overwrite the sending application
+        terser.set("/.MSH-3-1", "new_sending_application");
+        logger.info(p.encode(hm).replace("\r", System.lineSeparator()));
+
+        //creation of an ORU msg
+        ORU_R01 oru = new ORU_R01();
+        oru.initQuickstart("ORU", "R01", "P");
+        terser = new Terser(oru);
+
+        for (int i = 0; i < 5; i++) {
+            terser.set("/PATIENT_RESULT/ORDER_OBSERVATION/OBSERVATION(" + i + ")/OBX-1",
+                    String.valueOf(i + 1));
+            terser.set("/PATIENT_RESULT/ORDER_OBSERVATION/OBSERVATION(" + i + ")/OBX-3",
+                    "ST");
+            terser.set("/PATIENT_RESULT/ORDER_OBSERVATION/OBSERVATION(" + i + ")/OBX-5",
+                    "This is the value for " + (i + 1));
+        }
+
+        logger.info(p.encode(oru).replace("\r", System.lineSeparator()));
 
     }
 

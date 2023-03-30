@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52a9ae1e-09d4-4ae4-a12a-d0726628d3af" name="Changes" comment="afasdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ue01/ExampleParseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue01/ExampleParseMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ue02/CreateAMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue02/CreateAMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ue03/ExampleUseTerser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue03/ExampleUseTerser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ue04/HapiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue04/HapiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ue04/HapiServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue04/HapiServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ue02/CreateAMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue02/CreateAMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ue03/ExampleUseTerser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue03/ExampleUseTerser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +46,26 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="ExampleUseTerser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ue03.ExampleUseTerser" />
+      <module name="IGS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ue03.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ExampleUseTerser" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680178921381</updated>
-      <workItem from="1680178922482" duration="1091000" />
+      <workItem from="1680178922482" duration="3713000" />
     </task>
     <task id="LOCAL-00001" summary="afasdf">
       <created>1680179247193</created>
@@ -73,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680179251975</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="afasdf">
+      <created>1680180025495</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680180025495</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -23,13 +23,36 @@ public class CreateAMessage {
      */
     public static void main(String[] args) throws Exception {
 
-        /* ######################################################
-         * TODO: Use HAPI to create a HL7v2 ADT_A01 Message
-         * - add MSH Segment (Sending Application, Sequence Number)
-         * - add PID Segment (Family name, Given name, ID)
-         * - Encode the Message as Pipe an XML
-         * #####################################################
-         */
+        //Prep for the ADT A01 msg
+        ADT_A01 adt = new ADT_A01();
 
+        //Quick Init
+        //1: Code -> ADT
+        //2: TriggerEvent -> A01
+        //3: Processing Code -> P = Production, T = Test
+        adt.initQuickstart("ADT", "A01", "P");
+
+        //Filling the msg header
+        MSH msh = adt.getMSH();
+        msh.getSendingApplication().getNamespaceID().setValue("TestSendingSystem");
+        msh.getSequenceNumber().setValue("123");
+
+        //Filling the patient information
+        PID pid = adt.getPID();
+        pid.getPatientName(0).getFamilyName().getSurname().setValue("Doe");
+        pid.getPatientName(0).getGivenName().setValue("John");
+        pid.getPatientIdentifierList(0).getID().setValue("123456");
+
+        // fill msg over context
+        HapiContext context = new DefaultHapiContext();
+        Parser p = context.getPipeParser();
+        String encodedMessage = p.encode(adt).replace("\r", System.lineSeparator());
+        logger.info("Printing encoded HL7 - ER7 Encoded message:");
+        logger.info(encodedMessage);
+
+        p = context.getXMLParser();
+        encodedMessage = p.encode(adt).replace("\r", System.lineSeparator());
+        logger.info("Printing encoded HL7 - ER7 Encoded message:");
+        logger.info(encodedMessage);
     }
 }
