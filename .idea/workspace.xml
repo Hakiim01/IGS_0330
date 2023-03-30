@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a9ae1e-09d4-4ae4-a12a-d0726628d3af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IGS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="52a9ae1e-09d4-4ae4-a12a-d0726628d3af" name="Changes" comment="afasdf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ue01/ExampleParseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue01/ExampleParseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ue02/CreateAMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue02/CreateAMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ue03/ExampleUseTerser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue03/ExampleUseTerser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ue04/HapiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue04/HapiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ue04/HapiServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ue04/HapiServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -41,6 +44,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,12 +57,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680178921381</updated>
-      <workItem from="1680178922482" duration="313000" />
+      <workItem from="1680178922482" duration="1091000" />
     </task>
+    <task id="LOCAL-00001" summary="afasdf">
+      <created>1680179247193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680179247193</updated>
+    </task>
+    <task id="LOCAL-00002" summary="afasdf">
+      <created>1680179251975</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680179251975</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="afasdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="afasdf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

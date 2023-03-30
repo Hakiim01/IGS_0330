@@ -1,14 +1,21 @@
-package igs.hl7v2.ue01;
+package ue01;
 
+import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HL7Exception;
+import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.examples.ExampleParseMessages;
+import ca.uhn.hl7v2.model.Message;
+import ca.uhn.hl7v2.model.v22.datatype.PN;
+import ca.uhn.hl7v2.model.v22.message.ADT_A01;
+import ca.uhn.hl7v2.model.v22.segment.MSH;
+import ca.uhn.hl7v2.parser.Parser;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
 public class ExampleParseMessage {
 
-    private static Logger logger = Logger.getLogger(ExampleParseMessages.class);
+    private static final Logger logger = Logger.getLogger(ExampleParseMessages.class);
 
     /**
      * A simple example of parsing a message
@@ -26,22 +33,44 @@ public class ExampleParseMessage {
                 + "GT1||0222PL|NOTREAL^BOB^B||STREET^OTHER STREET^CITY^ST^77787|(444)999-3333|(222)777-5555||||MO|111-33-5555||||NOTREAL GILL N|STREET^OTHER STREET^CITY^ST^99999|(111)222-3333\r"
                 + "IN1||022254P|4558PD|BLUE CROSS|STREET^OTHER STREET^CITY^ST^00990||(333)333-6666||221K|LENIX|||19980515|19990515|||PATIENT01 TEST D||||||||||||||||||02LL|022LP554";
 
+        /* ######################################################
+         * TODO: Use HAPI-Terser mechanism to read/write certain parts of the above message
+         * - retrieve and display the sendingApplication and print it to console
+         * - retrieve and display the second allergytype and print it to console
+         * - set the sending application to mySendingApplication
+         * - create a ORU_R01 Message and add 5 OBX segments to it
+         * #####################################################
+         */
 
-        //Factory fpr methods from the HAPI Framework
+        //Factory for the methods using the HAPI Framework
         HapiContext context = new DefaultHapiContext();
 
-        Parser p = context.getGenericParser();
+        //Parsing to convert string to an object
+        Parser genericParser = context.getGenericParser();
 
-        //Parssing the mesage
-        Message hapiMessage = p.parse(msg);
+        //Parsing of the message
+        Message hapiMessage = genericParser.parse(msg);
 
-        //casting to ADT A01 message
+        //Cast to ADT A01 Message
         ADT_A01 adtMsg = (ADT_A01) hapiMessage;
-
-        //loads the message header
+        //Loading of the message header
         MSH msh = adtMsg.getMSH();
 
-        String msgType = msh.getMessageType().getMessageType().;
+        //Loading of the message type, trigger and header
+        String msgType = msh.getMessageType().getMessageType().getValue();
+        String msgTrigger = msh.getMessageType().getTriggerEvent().getValue();
+
+        //logging of ADT A01
+        System.out.println(msgType + " " + msgTrigger);
+        logger.info(msgType + " " + msgTrigger);
+
+        //Load patient
+        PN patientName = adtMsg.getPID().getPatientName();
+        String familyName = patientName.getFamilyName().getValue();
+        String givenName = patientName.getGivenName().getValue();
+
+        logger.info(familyName + " " + givenName);
+
 
     }
 }

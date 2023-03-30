@@ -1,4 +1,4 @@
-package igs.hl7v2.ue03;
+package ue03;
 
 import org.apache.log4j.Logger;
 
